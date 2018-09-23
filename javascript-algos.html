@@ -1,4 +1,7 @@
+<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+-->
+<script src="./node_modules/lodash/lodash.js"></script>
 <h3>
     Messages App
     <button onclick="clearMessages()">
@@ -97,8 +100,8 @@
         clearUserInput();
     }
     
-    //TODO SET THE FLAG TO FALS ONCE YOU UNDERSTAND THE ASSIGNMENT
-    const instructionsFlag = true;
+    // Done TODO SET THE FLAG TO FALS ONCE YOU UNDERSTAND THE ASSIGNMENT
+    const instructionsFlag = false;
     if (instructionsFlag) {
         console.log(`README`);
         console.log(`
@@ -189,10 +192,14 @@
             nameElm.setAttribute('class', 'filtered-name');
             var text = document.createTextNode(`${name.firstName} ${name.lastName}`);
             nameElm.appendChild(text);
+            nameElm.setAttribute('handle', name.handle);
+            nameElm.addEventListener('click', function(event){
+                addHandleMessage(event.target.getAttribute('handle'));
+            });
             namesContainer.appendChild(nameElm);
             
             /* 
-                TODO :: ADD CLICK EVENT LISTENER [addEventListener] TO EACH NAME ELEMENT.
+                Done TODO :: ADD CLICK EVENT LISTENER [addEventListener] TO EACH NAME ELEMENT.
                 IF THE USER CLICKS ON A FILTERED NAME THEN THEN A MESSAGE IS OUTPUT
                 USING THE ADD MESSAGE FUNCTION THAT REPLACES THE USER name WITH THE USER HANDLE.
                 THE addHandleMessage FUNCTION SHOULD BE INVOKED FROM INSIDE THE CALLBACK OF THE EVENT LISTENER.
@@ -253,7 +260,7 @@
             'input',
             debounce(
                 searchNames,
-                1000
+                1500
             )
         );
         initDocument();
