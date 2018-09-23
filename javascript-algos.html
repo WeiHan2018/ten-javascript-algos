@@ -6,7 +6,7 @@
     </button>
 </h3>
 <div>
-    <!-- TODO ADD AN ATTRIBUTE THAT focuses the CURSOR INTO THE TEXTAREA ELEMENT WHEN THE PAGE LOADS -->
+    <!-- Done TODO ADD AN ATTRIBUTE THAT focuses the CURSOR INTO THE TEXTAREA ELEMENT WHEN THE PAGE LOADS -->
     <textarea 
         autofocus
         rows=6 
@@ -59,8 +59,12 @@
     }
 
     function clearMessages() {
-        /*TODO CLEAR MESSAGES FROM DOCUMENT WHEN USER CLICKS THE [CLEAR MESSAGES] BUTTON */
+        /* Done TODO CLEAR MESSAGES FROM DOCUMENT WHEN USER CLICKS THE [CLEAR MESSAGES] BUTTON */
         /* EXTRA CREDIT INCLUDE A SCRIPT TAG THATS FETCHES BOOTSTRAP CSS STLYINGS AND STYLE THE BUTTONS */
+        var messageContainer = document.getElementById('messagesContainer');
+        while (messageContainer.hasChildNodes()) {
+            messageContainer.removeChild(messageContainer.lastChild);
+        }
     }
 
     function addPlainMessage() {
