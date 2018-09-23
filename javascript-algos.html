@@ -87,11 +87,15 @@
         handleSpan.style['color'] = 'dodgerblue';
         handleText = document.createTextNode(handle);
         handleSpan.appendChild(handleText);
-        // TODO:: EXCLUDING THE ORIGINALLY TYPED USER NAME REPLACE THIS TEXT \
+        // Done TODO:: EXCLUDING THE ORIGINALLY TYPED USER NAME REPLACE THIS TEXT \
         //        WITH ANY ADDITIONAL USER TEXT FROM THE ORIGIN USER TEXT MESSAGE
-        var dummyText = 'TODO:: EXCLUDING THE ORIGINALLY TYPED USER NAME REPLACE THIS TEXT \
-                         WITH ANY ADDITIONAL USER TEXT FROM THE ORIGIN USER TEXT MESSAGE';
-        var messageText = document.createTextNode(`${dummyText} `);
+        //var dummyText = 'TODO:: EXCLUDING THE ORIGINALLY TYPED USER NAME REPLACE THIS TEXT \
+        //                 WITH ANY ADDITIONAL USER TEXT FROM THE ORIGIN USER TEXT MESSAGE';
+        let originText = getUserText();
+        let beginPos = originText.indexOf(' ');
+        let text = originText.substring(beginPos);
+        
+        var messageText = document.createTextNode(`${text} `);
         messageDiv.appendChild(handleSpan);
         messageDiv.appendChild(messageText);
         messagesContainer.appendChild(messageDiv);
