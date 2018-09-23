@@ -247,13 +247,13 @@
             console.log('MISSING @ IN USER TEXT');
         }
     }
-    // TODO UPDATE THE DEBOUNCE DELAY TO MORE CLOSELY RESEMBLE USER TYPING
+    // Done TODO UPDATE THE DEBOUNCE DELAY TO MORE CLOSELY RESEMBLE USER TYPING
     document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('inputText').addEventListener(
             'input',
             debounce(
                 searchNames,
-                20000
+                1000
             )
         );
         initDocument();
